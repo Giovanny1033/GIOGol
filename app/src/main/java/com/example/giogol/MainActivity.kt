@@ -13,19 +13,21 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        readNames()
-        writeNames()
+      /*  readNames()
+        writeNames()*/
 
         val nextButton = findViewById<Button>(R.id.nextButton)
+        nextButton.setOnClickListener {goToSecondActivity()
+
+        }
     }
 
-    fun doClick(view: View){
+   /* fun doClick(view: View){
         //Do something
         println(view)
-    }
+    }*/
 
-    nextButton.setOnClickListener
-    = openSecondActivity()
+
 
     /*fun readNames(){
         val input = Scanner (resources.openRawResource(R.raw.names))
@@ -41,20 +43,21 @@ class MainActivity : AppCompatActivity() {
         output.close()
     }
 
-    fun readNames(){
+    /*fun readNames(){
         val input = Scanner(openFileInput("Canchas.txt"))
         println(input.nextLine())
         output.close()
-    }
+    }*/
 
-    fun openSecondActivity(){
-        val myIntent = Intent(this, SecondActivity::class.java)
-        startActivity(myIntent)
-        val uri = Uri.parse("geo:4.576462800039295, -74.1252105740065") //URI -URL
+    fun goToSecondActivity(){
+        val secondIntent = Intent(this, SecondActivity::class.java)
+        startActivity(secondIntent)
+
+      /*  val uri = Uri.parse("geo:4.576462800039295, -74.1252105740065") //URI -URL
         val myIntent = Intent(Intent.ACTION_VIEW, uri)
         val myIntent: Intent = Uri.parse("tel: +573176372226").let { number ->
             Intent(Intent.ACTION_DIAL, number)
         }
-        val myIntent = Intent(Intent.ACTION_DIAL, data)
+        val myIntent = Intent(Intent.ACTION_DIAL, data)*/
     }
 }

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "882934908724",
+    "project_id": "giogol",
+    "storage_bucket": "giogol.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882934908724:android:eb78232ca582c2cc1b8761",
+        "android_client_info": {
+          "package_name": "com.example.giogol"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882934908724-ljhuj55oc0r0468vk2gbo9pvch1lf07t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADbSg3GafOzcwo6b86ZWOcz93O-N38laE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882934908724-ljhuj55oc0r0468vk2gbo9pvch1lf07t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
