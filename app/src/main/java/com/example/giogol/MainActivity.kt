@@ -29,11 +29,20 @@ class MainActivity : AppCompatActivity() {
         // Initialize Firebase Auth
         auth = Firebase.auth
 
+        signOut()
+
 
         val nextButton = findViewById<Button>(R.id.nextButton)
         nextButton.setOnClickListener {goToSecondActivity()
 
         }
+
+    }
+
+    private fun signOut(){
+        Firebase.auth.signOut()
+        val intent = Intent(this, SignInActivity::class.java)
+        startActivity(intent)
     }
 
    /* fun doClick(view: View){
