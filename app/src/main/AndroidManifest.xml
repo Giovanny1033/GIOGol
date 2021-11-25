@@ -15,6 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GIOGOL">
         <activity
+            android:name=".AccountRecoveryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckEmailActivity"
+            android:exported="false" />
+        <activity
             android:name=".SignUpActivity"
             android:exported="true" />
         <activity

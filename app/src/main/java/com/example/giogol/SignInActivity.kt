@@ -52,7 +52,12 @@ class SignInActivity : AppCompatActivity() {
         super.onStart()
         val currentUser = auth.currentUser
         if(currentUser != null){
-            reload();
+            if(currentUser.isEmailVerified){
+                reload()
+            }else{
+                val intent = Intent(this, CheckEmailActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -74,6 +79,6 @@ class SignInActivity : AppCompatActivity() {
     }
     private fun reload(){
         val intent = Intent (this, MainActivity::class.java)
-        this.startActivity(intent)
+        startActivity(intent)
     }
 }

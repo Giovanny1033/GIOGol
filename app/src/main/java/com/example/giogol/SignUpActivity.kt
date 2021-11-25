@@ -49,14 +49,34 @@ class SignUpActivity : AppCompatActivity() {
 
         binding.backImageView.setOnClickListener{
             val intent = Intent (this, SignInActivity::class.java)
-        startActivity(intent)
+            startActivity(intent)
         }
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        val currentUser = auth.currentUser
+        if(currentUser != null){
+            if(currentUser.isEmailVerified){
+                reload()
+            }else{
+                val intent = Intent(this, CheckEmailActivity::class.java)
+                startActivity(intent)
+            }
+        }
+    }
+
+    private fun reload(){
+        val intent = Intent (this, MainActivity::class.java)
+        startActivity(intent)
     }
 
     private fun createAccount(email : String, password : String){
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    val intent = Intent (this, CheckEmailActivity::class.java)
+                    startActivity(intent)
 
                 } else {
                     Log.w("TAG", "createUserWithEmail:failure", task.exception)
